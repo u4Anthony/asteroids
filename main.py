@@ -40,7 +40,12 @@ def main():
 		# draw game onjects
 		for object in drawable:
 			object.draw(screen)
-
+		
+		for object in asteroids:
+			if object.collision(player):
+				print("Game over!")
+				return
+	
 		# update the full display
 		pygame.display.flip()
 		
